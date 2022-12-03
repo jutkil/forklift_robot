@@ -1,0 +1,25 @@
+forklift_arm_controller:
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - l6
+      - l5
+      - l4
+      - l3
+      - l2
+      - l1
+    stop_trajectory_duration: 0.5
+    state_publish_rate:  25
+    action_monitor_rate: 10
+/gazebo_ros_control:
+    pid_gains:
+      l1: {p: 1000.0, i: 600.0, d: 10.0}
+      l2: {p: 1000.0, i: 600.0, d: 10.0}
+      l3: {p: 1000.0, i: 600.0, d: 10.0}
+      l4: {p: 1000.0, i: 600.0, d: 10.0}
+      l5: {p: 1000.0, i: 600.0, d: 10.0}
+      l6: {p: 1000.0, i: 600.0, d: 10.0}
+  # Publish all joint states -----------------------------------
+  #joint_state_controller:
+  #  type: joint_state_controller/JointStateController
+  #  publish_rate: 50
+  # Position Controllers --------------------------------------

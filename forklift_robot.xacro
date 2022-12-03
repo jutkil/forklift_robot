@@ -1,0 +1,335 @@
+<?xml version="1.0" ?>
+<robot name="forklift_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find forklift_robot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find forklift_robot_description)/urdf/forklift_robot.trans" />
+<xacro:include filename="$(find forklift_robot_description)/urdf/forklift_robot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.04023799417719452 2.4525300764303177e-16 0.27062069281074946" rpy="0 0 0"/>
+    <mass value="109.05654375999"/>
+    <inertia ixx="0.373447" iyy="1.713046" izz="9.537133" ixy="0.0" iyz="-0.0" ixz="0.00933119"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_1_1">
+  <inertial>
+    <origin xyz="0.04799163613302859 -0.48926311595346855 9.992007221626409e-16" rpy="0 0 0"/>
+    <mass value="0.79210110942673"/>
+    <inertia ixx="0.000294" iyy="0.000158" izz="0.000328" ixy="-1e-06" iyz="-6e-06" ixz="-3.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.802 -0.0 -0.8" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/link_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.802 -0.0 -0.8" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/link_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_2_1">
+  <inertial>
+    <origin xyz="0.04801527849205145 7.951052003907222e-06 0.2000311805960242" rpy="0 0 0"/>
+    <mass value="0.636986428830017"/>
+    <inertia ixx="0.000294" iyy="0.000158" izz="0.000328" ixy="-1e-06" iyz="-6e-06" ixz="-3.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.802 1.0 -0.8" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/link_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.802 1.0 -0.8" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/link_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_3_1">
+  <inertial>
+    <origin xyz="0.04798957458703079 0.3625542865222178 -1.176836406102666e-14" rpy="0 0 0"/>
+    <mass value="0.88579388998393"/>
+    <inertia ixx="0.000294" iyy="0.000158" izz="0.000328" ixy="-1e-06" iyz="-6e-06" ixz="-3.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.802 1.0 -1.2" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/link_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.802 1.0 -1.2" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/link_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_4_1">
+  <inertial>
+    <origin xyz="-0.047989862163200114 0.19822125424130696 1.0137836775614417e-05" rpy="0 0 0"/>
+    <mass value="0.839673850383303"/>
+    <inertia ixx="0.000294" iyy="0.000158" izz="0.000328" ixy="-1e-06" iyz="-6e-06" ixz="-3.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.898 0.4 -1.2" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/link_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.898 0.4 -1.2" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/link_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_5_1">
+  <inertial>
+    <origin xyz="0.08003886285179851 -1.2970589922740741e-05 -0.04801214338240478" rpy="0 0 0"/>
+    <mass value="0.633132672522482"/>
+    <inertia ixx="0.000294" iyy="0.000158" izz="0.000328" ixy="-1e-06" iyz="-6e-06" ixz="-3.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.85 0.0 -1.248" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/link_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.85 0.0 -1.248" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/link_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="link_6_1">
+  <inertial>
+    <origin xyz="0.4518032682817148 0.009999999999998925 -0.16720601381296496" rpy="0 0 0"/>
+    <mass value="0.25015607092092"/>
+    <inertia ixx="0.000294" iyy="0.000158" izz="0.000328" ixy="-1e-06" iyz="-6e-06" ixz="-3.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-1.052 0.0 -1.2" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/link_6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-1.052 0.0 -1.2" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/link_6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_base_1">
+  <inertial>
+    <origin xyz="6.663484238389472e-06 5.680544369622464e-16 0.08518510752494468" rpy="0 0 0"/>
+    <mass value="0.269722296455804"/>
+    <inertia ixx="0.000294" iyy="0.000158" izz="0.000328" ixy="-1e-06" iyz="-6e-06" ixz="-3.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.85 -0.0 -0.602" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/arm_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.85 -0.0 -0.602" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/arm_base_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_rear_wheel_1">
+  <inertial>
+    <origin xyz="0.0 0.10074491716164286 3.6327738750962685e-17" rpy="0 0 0"/>
+    <mass value="4.15770588809661"/>
+    <inertia ixx="0.000294" iyy="0.000158" izz="0.000328" ixy="-1e-06" iyz="-6e-06" ixz="-3.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.6 -0.45 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/left_rear_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.6 -0.45 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/left_rear_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_front_wheel_1">
+  <inertial>
+    <origin xyz="0.0 0.10074491716164286 -1.7239418987856801e-16" rpy="0 0 0"/>
+    <mass value="4.15770588809661"/>
+    <inertia ixx="0.000294" iyy="0.000158" izz="0.000328" ixy="-1e-06" iyz="-6e-06" ixz="-3.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.6 -0.45 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/left_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.6 -0.45 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/left_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_front_wheel_1">
+  <inertial>
+    <origin xyz="0.0 -0.1007449171616433 -2.539314515774933e-16" rpy="0 0 0"/>
+    <mass value="4.15770588809661"/>
+    <inertia ixx="0.000294" iyy="0.000158" izz="0.000328" ixy="-1e-06" iyz="-6e-06" ixz="-3.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.6 0.45 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/right_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.6 0.45 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/right_front_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_rear_wheel_1">
+  <inertial>
+    <origin xyz="0.0 -0.1007449171616433 -4.076863084946332e-17" rpy="0 0 0"/>
+    <mass value="4.15770588809661"/>
+    <inertia ixx="0.000294" iyy="0.000158" izz="0.000328" ixy="-1e-06" iyz="-6e-06" ixz="-3.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.6 0.45 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/right_rear_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.6 0.45 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://forklift_robot_description/meshes/right_rear_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="l2" type="continuous">
+  <origin xyz="-0.048 0.0 0.198" rpy="0 0 0"/>
+  <parent link="arm_base_1"/>
+  <child link="link_1_1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="l3" type="continuous">
+  <origin xyz="0.0 -1.0 0.0" rpy="0 0 0"/>
+  <parent link="link_1_1"/>
+  <child link="link_2_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="l4" type="continuous">
+  <origin xyz="0.0 0.0 0.4" rpy="0 0 0"/>
+  <parent link="link_2_1"/>
+  <child link="link_3_1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="l5" type="continuous">
+  <origin xyz="0.096 0.6 0.0" rpy="0 0 0"/>
+  <parent link="link_3_1"/>
+  <child link="link_4_1"/>
+  <axis xyz="1.0 0.0 0.0"/>
+</joint>
+
+<joint name="l6" type="continuous">
+  <origin xyz="-0.048 0.4 0.048" rpy="0 0 0"/>
+  <parent link="link_4_1"/>
+  <child link="link_5_1"/>
+  <axis xyz="0.0 -0.0 -1.0"/>
+</joint>
+
+<joint name="forkjoint" type="fixed">
+  <origin xyz="0.202 0.0 -0.048" rpy="0 0 0"/>
+  <parent link="link_5_1"/>
+  <child link="link_6_1"/>
+</joint>
+
+<joint name="l1" type="continuous">
+  <origin xyz="0.85 0.0 0.602" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="arm_base_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="backleft" type="continuous">
+  <origin xyz="-0.6 0.45 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_rear_wheel_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="frontleft" type="continuous">
+  <origin xyz="0.6 0.45 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_front_wheel_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="frontright" type="continuous">
+  <origin xyz="0.6 -0.45 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_front_wheel_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="backright" type="continuous">
+  <origin xyz="-0.6 -0.45 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_rear_wheel_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+</robot>

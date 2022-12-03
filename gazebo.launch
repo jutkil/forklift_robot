@@ -1,0 +1,31 @@
+<launch>
+  <arg name="x" default="0" />
+  <arg name="y" default="0" />
+  <arg name="z" default="0.5" />
+  <arg name="P" default="0" />
+  <arg name="R" default="0" />
+  <arg name="Y" default="0" />
+
+  <param name="robot_description" command="$(find xacro)/xacro $(find forklift_robot_description)/urdf/forklift_robot.xacro"/>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+        args="-x $(arg x) -y $(arg y) -z $(arg z)
+              -R $(arg R) -P $(arg P) -Y $(arg Y)
+              -param robot_description -urdf -model forklift_robot"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="true"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+
+  <rosparam command="load" file="$(find forklift_robot_description)/config/controller.yaml" />
+  <node name="forklift_arm_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn forklift_arm_controller" respawn="false" output="screen"/>
+
+  <rosparam command="load" file="$(find forklift_robot_description)/config/joint_state_controller.yaml" />
+  <node name="joint_state_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn joint_state_controller" respawn="false" output="screen"/>
+
+
+</launch>
